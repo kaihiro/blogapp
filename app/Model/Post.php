@@ -1,16 +1,29 @@
 <?php
 App::uses('AppModel', 'Model');
+
 /**
  * Post Model
  *
+ * ブログ記事用モデルです
+ *
+ * @copyright php_ci_book
+ * @link https://github.com/kaihiro/blogapp/blob/master/app/Model/Post.php
+ * @since 1.0
+ * @author kai<kai@fusic.co.jp>
  */
 class Post extends AppModel {
 
-/**
- * Validation rules
- *
- * @var array
- */
+    /**
+     * 一覧表示時のタイトルに使用するカラム名
+     * 
+     * @var string
+     */
+    public $displayField = 'title';
+
+    /**
+     * バリデーションルール
+     * @var array
+     */
 	public $validate = [
 		'title' => [
 			'notEmpty' => [
